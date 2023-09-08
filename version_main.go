@@ -22,7 +22,11 @@ func main() {
 
 	t := time.Now().Format("2006-01-02 15:04:05")
 
-	ver := "mmbee " + s + " " + t
+	// 获取golang版本
+	v := runtime.Version()
+
+	// 将golang版本添加到ver变量中
+	ver := "mmbee " + s + " " + t + " " + v
 
 	os.WriteFile("version.txt", []byte(ver), 0644)
 
