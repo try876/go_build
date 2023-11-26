@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"os"
 	"os/exec"
+	"runtime"
 	"strings"
 	"time"
 )
@@ -28,6 +29,7 @@ func main() {
 	// 将golang版本添加到ver变量中
 	ver := "mmbee " + s + " " + t + " " + v
 
+	// 注意，在哪个目录运行go build或go run，就在哪里生成version.txt
 	os.WriteFile("version.txt", []byte(ver), 0644)
 
 	fmt.Println(ver)
